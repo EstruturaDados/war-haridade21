@@ -40,15 +40,15 @@ int main() {
                     getchar(); // limpa o buffer após ler número
 
                     cadastrados++;
-                    printf("\n✅ Território cadastrado com sucesso!\n");
+                    printf("\n Território cadastrado com sucesso!\n");
                 } else {
-                    printf("\n⚠️ Limite de 5 territórios atingido!\n");
+                    printf("\n Limite de 5 territórios atingido!\n");
                 }
                 break;
 
             case 2:
                 if (cadastrados == 0) {
-                    printf("\n⚠️ Nenhum território cadastrado ainda!\n");
+                    printf("\n Nenhum território cadastrado ainda!\n");
                 } else {
                     printf("\n===== LISTA DE TERRITÓRIOS =====\n");
                     for (int i = 0; i < cadastrados; i++) {
@@ -61,11 +61,11 @@ int main() {
                 break;
 
             case 3:
-                printf("\n👋 Encerrando o programa... Até logo!\n");
+                printf("\n Encerrando o programa... Até logo!\n");
                 break;
 
             default:
-                printf("\n❌ Opção inválida! Tente novamente.\n");
+                printf("\n Opção inválida! Tente novamente.\n");
         }
 
     } while (opcao != 3);

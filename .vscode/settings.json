@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "WAR_NOVATO.C": "cpp"
+        "WAR_NOVATO.C": "cpp",
+        "WAR_AVENTUREIRO.C": "cpp"
     }
 }

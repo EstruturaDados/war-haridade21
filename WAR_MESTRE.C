@@ -66,20 +66,20 @@ void atacar(Territorio* atacante, Territorio* defensor) {
     int dadoA = rand() % 6 + 1;
     int dadoD = rand() % 6 + 1;
 
-    printf("\n🎯 %s (%s) atacou %s (%s)\n",
+    printf("\n %s (%s) atacou %s (%s)\n",
            atacante->nome, atacante->cor, defensor->nome, defensor->cor);
     printf("Dados: Atacante = %d | Defensor = %d\n", dadoA, dadoD);
 
     if (dadoA > dadoD) {
-        printf("✅ Atacante venceu! %s agora pertence à cor %s.\n",
+        printf(" Atacante venceu! %s agora pertence à cor %s.\n",
                defensor->nome, atacante->cor);
         strcpy(defensor->cor, atacante->cor);
         defensor->tropas = atacante->tropas / 2;
     } else {
         atacante->tropas--;
-        printf("⚔️  Defensor resistiu! %s perdeu 1 tropa.\n", atacante->nome);
+        printf("  Defensor resistiu! %s perdeu 1 tropa.\n", atacante->nome);
     }
-}
+} 
 
 // Libera memória alocada
 void liberarMemoria(Territorio* mapa, char** missoes, int jogadores) {
@@ -126,7 +126,7 @@ int main() {
     for (int i = 0; i < jogadores; i++) {
         missaoJogador[i] = (char*) malloc(100 * sizeof(char));
         atribuirMissao(missaoJogador[i], missoes, totalMissoes);
-        printf("🎯 Missão secreta do Jogador %d foi sorteada!\n", i + 1);
+        printf(" Missão secreta do Jogador %d foi sorteada!\n", i + 1);
     }
 
     // Loop principal do jogo
@@ -161,14 +161,14 @@ int main() {
             printf("Qual jogador deseja ver a missão (1 a 5)? ");
             scanf("%d", &j);
             if (j >= 1 && j <= jogadores)
-                printf("🔒 Missão secreta do Jogador %d: %s\n", j, missaoJogador[j - 1]);
+                printf(" Missão secreta do Jogador %d: %s\n", j, missaoJogador[j - 1]);
             else
                 printf("Jogador inválido!\n");
         } 
         else if (opcao == 4) {
             for (int i = 0; i < jogadores; i++) {
                 if (verificarMissao(missaoJogador[i], mapa, tamMapa)) {
-                    printf("\n🏆 Jogador %d cumpriu sua missão secreta e venceu o jogo!\n", i + 1);
+                    printf("\n Jogador %d cumpriu sua missão secreta e venceu o jogo!\n", i + 1);
                     liberarMemoria(mapa, missaoJogador, jogadores);
                     return 0;
                 }
